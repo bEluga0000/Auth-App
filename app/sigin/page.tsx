@@ -2,7 +2,7 @@
 import AuthForm from "@/components/AuthForm"
 import { ButtonFieldPropsTypes } from "@/components/ButtonField"
 import { InputFieldPropsTypes } from "@/components/InputField"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 
 const Signin = () => {
     const router = useRouter()

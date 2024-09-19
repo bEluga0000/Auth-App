@@ -2,9 +2,10 @@
 import AuthForm from "@/components/AuthForm"
 import { ButtonFieldPropsTypes } from "@/components/ButtonField"
 import { InputFieldPropsTypes } from "@/components/InputField"
-import router from "next/router"
+import  { useRouter } from "next/navigation"
 
 const CodeVerification = () => {
+    const router = useRouter()
     const handelMainButton = () => {
         console.log("I am getting clicked")
         router.push("/")
