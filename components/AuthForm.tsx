@@ -24,7 +24,7 @@ const AuthForm:React.FC<AuthFormPropsTypes> = ({
 })=>{
     const router = useRouter()
     return <div className="h-screen w-screen flex justify-center bg-gray-800 ">
-        <div className="  flex flex-col sm:w-8/12  w-full  p-4 sm:border  sm:rounded-xl bg-white md:w-1/2 lg:w-1/3 sm:m-2">
+        <div className="  flex flex-col sm:w-8/12  w-full  p-4 sm:border  sm:rounded-xl bg-white md:w-1/2 lg:w-1/3 sm:m-2 overflow-y-auto">
         {
                 backArrow && <div className="flex">
                     <div className="cursor-pointer px-2 py-1 border rounded-lg hover:scale-105" onClick={()=>{
@@ -38,20 +38,20 @@ const AuthForm:React.FC<AuthFormPropsTypes> = ({
                 </div>
         }
             
-            <div className="flex  mb-2 justify-center">
+            <div className="flex  mb-1 justify-center">
                 <div>
-                    <h1 className="text-3xl font-black">🔐</h1>
+                    <h1 className="text-2xl font-black">🔐</h1>
                 </div>
                 <div>
                     <div className="flex flex-col items-center">
-                        <h1 className="text-3xl font-black"> Auth </h1>
+                        <h1 className="text-2xl font-black"> Auth </h1>
                     </div>
                     <div>
-                        <p className="text-slate-500 ">{page}</p>
+                        <p className="text-slate-500">{page}</p>
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-0.5">
                 {
                     InputFields?.map(field=>{
                         return <div>
@@ -59,13 +59,15 @@ const AuthForm:React.FC<AuthFormPropsTypes> = ({
                             label={field.label}
                             placeholder={field.placeholder}
                             type={field.type}
-                            Errmsg={field.Errmsg}/>
+                            Errmsg={field.Errmsg}
+                            val={field.val}
+                            setFunction={field.setFunction}/>
                         </div>
                     })
                 }
             </div>
             {
-                pageMsgs && <div className="my-2 flex p-1 text-green-950 text-sm font-bold">
+                pageMsgs && <div className="flex p-0.5 text-green-950 text-sm font-bold">
                     <p className=" bg-green-200 p-2">{pageMsgs}</p>
                 </div>
             }
@@ -79,9 +81,10 @@ const AuthForm:React.FC<AuthFormPropsTypes> = ({
                                 bg="bg-black"
                                 desc={ButtonFields.length > 0 ? ButtonFields[0].desc : "Button"}
                                 onClick={ButtonFields[0].onClick}
+                                disable={ButtonFields[0].disable}
                             />
                         </div>
-                        <div className="flex gap-2">
+                        {/* <div className="flex gap-2">
                             {ButtonFields.length > 1 && (
                                 <div className="flex-1">
                                     <ButtonField
@@ -113,12 +116,11 @@ const AuthForm:React.FC<AuthFormPropsTypes> = ({
                                         onClick={ButtonFields[1].onClick}
                                     />
                                 </div>
-                            )}
-                        </div>
+                            )} */}
+                        {/* </div> */}
                     </div>
                 )
             }
-
             {
                 footerMsg && <div className="flex justify-center mt-2 gap-2">
                     <p>{footerMsg}</p>

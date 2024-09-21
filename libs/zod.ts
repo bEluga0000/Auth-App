@@ -6,6 +6,10 @@ export const signupSchema = z.object({
     first:z.string(),
     last:z.string(),
 })
+export type signupSchemaType = z.infer<typeof signupSchema>
+export const verifySchema = z.object({
+    otp:z.string().length(6)
+})
 
 // password: z.string().regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d])[A-Za-z\d\W]{8,}$/,
 //     {
