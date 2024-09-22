@@ -6,7 +6,6 @@ export async function GET(req: NextRequest) {
     const clientIp = forwardedFor ? forwardedFor.split(',')[0].trim() : req.ip;
     // const ip = forwardedFor?.split(',')[0].trim();
     // const geo = ip ? geoip.lookup(ip) : null;
-
     // console.log(geo); // Log geo information for debugging
 
     return NextResponse.json({

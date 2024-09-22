@@ -34,16 +34,17 @@ export async function PATCH(req: NextRequest) {
         if (err || !user_Id)
             return NextResponse.json({ msg: "your jWT token is not valid", err: "JWT error" }, { status: 404 })
 
-        await prisma.user.update({
+        const user = await prisma.user.update({
             where: {
                 id: user_Id.id
             }, data: {
                 verified: true
             }
         })
-        const jwt_secret = process.env.NEXTAUTH_JWT_SECRET || ""
-        const verifiedtoken = jwt.sign({ id: user_Id.id, mail: user_Id.email, verified: true }, jwt_secret)
-        return NextResponse.json({ msg: "User Verified", verifiedtoken }, { status: 201 })
+        // todo no need of genertating the token here bcz we are sending the user to the signin again
+        // const jwt_secret = process.env.NEXTAUTH_JWT_SECRET || ""
+        // const verifiedtoken = jwt.sign({ id: user_Id.id, mail: user_Id.email, verified: true }, jwt_secret)
+        return NextResponse.json({ msg: "User Verified" ,user}, { status: 201 })
     }
     catch (e: any) {
         return NextResponse.json({ msg: "Server Error", err: e.message }, { status: 500 })

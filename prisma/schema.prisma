@@ -31,15 +31,10 @@ model User{
   otpString String?
 }
 
-enum DeviceType{
-  Phone
-  Ipad
-  Laptop
-}
 
 model LoginDetatils{
   id String @id @default(uuid())
-  device DeviceType?
+  device String?
   os String?
   loginTime DateTime @default(now())
   logoutTime DateTime? 

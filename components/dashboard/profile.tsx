@@ -1,8 +1,20 @@
 import { useState } from "react"
 import EditButton from "./EditButton"
 import ProfileForm from "./profileForm"
+import { useSetRecoilState } from "recoil"
+import { firstnameState, lastnameState, userEmailState, usernameState } from "@/libs/atom/recoil"
 
-const Profile = () => {
+export interface profileSegSchema{
+    username:string,
+    firstname:string
+    lastname:string
+}
+
+const Profile = ({username,firstname,lastname}:profileSegSchema) => {
+    const [usernameE, setUsername] = useState(username)
+    const [firstnameE, setFirstname] = useState(firstname)
+    const[lastnameE,setLastname] = useState(lastname)
+
     const[form,setShowForm] = useState<boolean>(false) 
     const toggleForm = ()=>{
         setShowForm((prev)=>!prev)

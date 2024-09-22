@@ -6,8 +6,7 @@ const Personal = ()=>{
         fields:[{
             FieldName:"Phone Number",
             placeholder:"9999999999"
-        },
-        
+        }, 
     ]
     } 
     return <div>

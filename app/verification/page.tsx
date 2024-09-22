@@ -16,7 +16,7 @@ const Verifcation = () => {
                     {},
                     {
                         headers: {
-                            authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg5N2E2MmExLTNmMjEtNGExOS05OWM0LWQyZWU5OGI4ZDJiYiIsIm1haWwiOiJzaHJleWFzMjk3NUBnbWFpbC5jb20iLCJpYXQiOjE3MjY5MDMzMDl9.uzpriuTUitlCbfYOmrEY2zlx4FnRAzOg86qzx5EZyXc`,
+                            authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI3ODg0NWE4LTMyYjctNGRmZC1hMzMxLWQxNGYxODNhMGMwZSIsIm1haWwiOiJzaHJleWFzMzAyMDA1QGdtYWlsLmNvbSIsInZlcmlmaWVkIjpmYWxzZSwiaWF0IjoxNzI2OTc2MTA5fQ.8g_yJjQHnJUBmsYHAo8qVn2PXnzW9gpSHsmufAs6j-4`,
                         },
                     }
                 );

@@ -1,8 +1,8 @@
-import Profile from "./profile"
+import Profile, {  profileSegSchema } from "./profile"
 
-const ProfileSeg = ()=>{
+const ProfileSeg = ({username}:profileSegSchema)=>{
     return <div>
-        <Profile/>
+        <Profile username={username}/>
     </div>
 }
 
